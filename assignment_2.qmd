@@ -114,6 +114,7 @@ print(bdb)
 
   
 ### (a) Using positive indices
+V[1:5]
 
 ### (b) Using negative indices
 
