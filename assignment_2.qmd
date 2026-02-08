@@ -117,6 +117,7 @@ print(bdb)
 V[1:5]
 
 ### (b) Using negative indices
+V[-(-1:-5)]
 
 ### (c) Using logical indexing
 
