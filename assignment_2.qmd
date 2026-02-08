@@ -190,5 +190,5 @@ final_df <- clean_df|>
 print(final_df)
 
 6. **Return the final cleaned data frame.**
-
+print(final_df)
 
