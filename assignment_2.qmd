@@ -99,6 +99,15 @@ V[3]
 V[5]
 
 ## (3ii) Subsetting using a `for` loop
+bdb <- c()
+
+for (i in seq_along(V)[c(TRUE, FALSE)]){
+  if (i <= length(V)){
+    bdb <- c(bdb, V[i])
+  }
+}
+
+print(bdb)
 
 
 ## (3iii)Returning all values in a single vector (one line of code)
