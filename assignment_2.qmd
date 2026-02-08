@@ -181,6 +181,13 @@ clean_df <- parse_df
 clean_df
 
 5. **Add a new variable** called `years_worked` that reports the number of full years each employee has worked as of today.
+hired <- clean_df$hire_date
+today <- Sys.Date()
+
+final_df <- clean_df|>
+  mutate(years_worked = floor(interval(hired, today)/years(1)))
+
+print(final_df)
 
 6. **Return the final cleaned data frame.**
 
