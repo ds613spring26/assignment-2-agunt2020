@@ -148,7 +148,15 @@ records
    - `hire_date`  
    - `dept
    `
+library(dplyr)
+library(tidyr)
+library(lubridate)
+library(stringr)
 
+clean_df <- data.frame(raw = records)|>
+  separate(raw, into = c("name", "hire_date", "dept"), sep = " \\| ")
+
+print(clean_df)
 
 2. **Convert `hire_date` into a proper `Date` object**, correctly handling all of the different date formats.
 
