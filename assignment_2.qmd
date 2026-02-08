@@ -169,6 +169,12 @@ print(parse_df$hire_date)
 
 3. **Convert `dept` into an ordered factor** with the levels:  
    `HR`, `FIN`, `IT`, `MKT`.
+dept_levels <- fct(
+  parse_df$dept, 
+  levels = c("HR", "FIN", "IT", "MKT")
+)
+
+print(parse_df$dept)
 
 4. **Construct a clean data frame** containing the parsed and converted variables.
 
