@@ -177,6 +177,8 @@ dept_levels <- fct(
 print(parse_df$dept)
 
 4. **Construct a clean data frame** containing the parsed and converted variables.
+clean_df <- parse_df
+clean_df
 
 5. **Add a new variable** called `years_worked` that reports the number of full years each employee has worked as of today.
 
