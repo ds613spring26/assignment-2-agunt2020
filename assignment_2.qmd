@@ -85,6 +85,28 @@ pos_na(c(1, NA, NA, 2, NA, 4, NA), c(NA, -5, 2, 4, 4, NA, 11))
   
 # Question 2
  Load the `wmata_ridership` data frame into R from <https://dcgerard.github.io/stat_412_612/data/wmata_ridership.csv>. For each month, calculate the proportion of rides made on a given day of the month. Then make box plots of the proport
+wmata <- read_csv("wmata_ridership.csv")
+wmata
+
+proportion_rides <- wmata|>
+  mutate(
+    year = year(Date), 
+    month = month(Date), 
+    day = day(Date)
+  )|>
+  group_by(year, month)|>
+  mutate(monthly_total = sum(Total))|>
+  mutate(daily_proportion = (Total/monthly_total)*100)|>
+  filter(year != 2004 & year != 2005)|>
+  mutate(dotw = day%%7)
+
+boxplot(daily_proportion ~ dotw, data=proportion_rides, 
+        main = "Ridership proportion by day of the week (dotw)", 
+        ylab = "Daily Proportion", 
+        xlab = "Day of the Week", 
+        col = c("red", "blue"))
+
+view(proportion_rides)
 
 # Question 3:
 Write R code that extracts the elements "Bears", "Dolphins", and "Bengals" from the vector `V` shown below, and display the result.
