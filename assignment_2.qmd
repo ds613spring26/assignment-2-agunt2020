@@ -159,6 +159,13 @@ clean_df <- data.frame(raw = records)|>
 print(clean_df)
 
 2. **Convert `hire_date` into a proper `Date` object**, correctly handling all of the different date formats.
+clean_dates <- parse_date_time(
+  parse_df$hire_date, 
+  orders=c("ymd", "dmy", "mdy")
+  )
+parse_df$hire_date <- as.Date(clean_dates)
+
+print(parse_df$hire_date)
 
 3. **Convert `dept` into an ordered factor** with the levels:  
    `HR`, `FIN`, `IT`, `MKT`.
