@@ -118,6 +118,7 @@ V[1:5]
 V[-(-1:-5)]
 
 ### (c) Using logical indexing
+V[c(TRUE, TRUE, TRUE, TRUE, TRUE)]
 
 ### (d) Attempting to subset by names
 
